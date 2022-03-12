@@ -16,6 +16,6 @@ public class Test1 {
                 // Проверки
                 .then()
                 .statusCode(200)
-                .body(/* --> ваша проверка здесь <-- */);
+                ;
     }
 }
