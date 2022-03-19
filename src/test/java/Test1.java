@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class Test1 {
     @Test
-    void shouldReturnSomething() {
+    void shouldReturnGoodSong() {
         // Given - When - Then
         // Предусловия
         given()
@@ -21,6 +21,21 @@ public class Test1 {
                 .then()
                 .statusCode(200)
                 .body("data", equalTo("Travel On The Wind"));
+    }
+    @Test
+    void shouldReturnFigure() {
+        // Given - When - Then
+        // Предусловия
+        given()
+                .baseUri("http://postman-echo.com")
+                .body(100000)
+                // Выполняемые действия
+                .when()
+                .post("/post")
+                // Проверки
+                .then()
+                .statusCode(200)
+                .body("data", equalTo(100000));
     }
 
 
